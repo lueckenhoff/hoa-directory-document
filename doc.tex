@@ -1,0 +1,66 @@
+\documentclass[10pt]{report}
+%\documentclass[draft,11pt]{report}
+\usepackage{longtable}
+\usepackage{hyperref}
+%\usepackage{graphicx}
+\usepackage[pdftex]{graphicx}
+%\usepackage[left=2cm, right=2cm, top=1cm]{geometry}
+\usepackage[top=1cm]{geometry}
+\usepackage{booktabs}
+\usepackage{multirow}
+\begin{document}
+
+\setcounter{secnumdepth}{0}
+%\setcounter{tocdepth}{1}
+
+%\hline
+{\centering
+  {\Huge \textbf{2020 Foxboro Directory}
+  }
+}
+
+
+%\title{2020 Foxboro Directory}
+%\maketitle
+\includegraphics[]{foxboro_logo.png}
+%\textbf{2020 Directory}
+%\newpage
+
+\section{Contents:}
+\begin{itemize}
+	\item Welcome
+	\item Local Connections
+	\item Homeowner’s Association Board of Directors
+	\item Neighborhood Directory
+	\item By-Laws of the Foxboro Homeowner’s Association
+	\item Street Address Listing
+	\item Map of the Foxboro Subdivision
+\end{itemize}
+\newpage
+
+\input{welcome}
+\input{history}
+\newpage
+
+\input{connections}
+\newpage
+
+\input{board}
+\newpage
+
+%\setcounter{LTchunksize}{8}
+%%	\begin{tabular}{p{0.1\textwidth}p{0.8\textwidth}}
+%%\begin{longtable}{ p{0.5in} | p{1in} | p{2in} | p{2in} }
+\input{directory_data}
+\newpage
+
+\input{bylaws}
+\newpage
+
+\input{street_dir}
+\newpage
+
+\section{Map of Foxboro Subdivision}
+\includegraphics[]{foxboro_map.png}
+
+\end{document}
