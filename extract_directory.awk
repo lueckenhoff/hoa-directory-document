@@ -68,19 +68,21 @@ print(" \\\\");
 
 print("\\midrule");
 #printf("%s ", firstname1);
-printf("\\multirow{3}{*}{%s}", firstname1);
-printf(" & Email: \\verb'%s' \\\\\n", email1)
-printf(" & Phone: %s \\\\\n", cellphone1)
+printf("\\multirow{2}{*}{%s}", firstname1);
+printf(" & Email: \\verb'%s' & Phone: %s \\\\\n", email1, cellphone1)
 if (length(hometown1)) {
 	printf(" & Hometown: %s, %s \\\\\n ", hometown1, homestate1);
+} else {
+	printf(" & Hometown: \\\\\n ");
 }
 print("\\midrule");
 #printf("%s ", firstname2);
-printf("\\multirow{3}{*}{%s}", firstname2);
-printf(" & Email: \\verb'%s' \\\\\n", email2)
-printf(" & Phone: %s \\\\\n", cellphone2)
+printf("\\multirow{2}{*}{%s}", firstname2);
+printf(" & Email: \\verb'%s' & Phone: %s \\\\\n", email2, cellphone2)
 if (length(hometown2)) {
 	printf(" & Hometown: %s, %s \\\\\n ", hometown2, homestate2);
+} else {
+	printf(" & Hometown: \\\\\n ");
 }
 
 if (length(child1)) {
@@ -109,5 +111,7 @@ if (length(child1)) {
 print("\\bottomrule");
 print("\\end{tabular}");
 print("\\end{center}");
+print("\\vspace{-1em}");
 print("");
 	}
+END	{ }
