@@ -1,7 +1,12 @@
 NR==1	{ next }
 	{
 #Deliv.Grp,Year Arrive,Dues,Note,Last Name,Street #,Street Name,Home Phone,First Name 1,E-mail Address 1,Cell Phone 1,Occupation 1,Hometown 1,State 1,First Name 2,E-mail Address 2,Cell Phone 2,Occupation 2,Hometown 2,State 2,Child 1,Child 2,Child 3,Child 4,Child 5,,
-lastname = $5
+note = tolower($4)
+if (match(note, "nopublish") >= 1) {
+	lastname = "-";
+} else {
+	lastname = $5
+}
 #printf("lastname = '%s'\n", lastname);
 street_num= $6
 #printf("street_num = '%s'\n", street_num);
