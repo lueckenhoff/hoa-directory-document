@@ -56,8 +56,10 @@ print("\\begin{tabular}{ p{0.16\\textwidth} p{0.49\\textwidth} p{0.25\\textwidth
 print("\\toprule");
 printf("{\\bf %s} &", lastname);
 printf(" %s %s & ", street_num, street_name);
+home_suffix = " (H)"
+cell_suffix = " (C)"
 if (length(home_phone)) {
-	printf("%s", home_phone);
+	printf("%s%s", home_phone, home_suffix);
 }
 print(" \\\\");
 #printf("Home Phone: & ", home_phone);
@@ -73,7 +75,11 @@ print(" \\\\");
 #print("\\midrule");
 #printf("%s ", firstname1);
 printf("\\multirow{2}{*}{%s}", firstname1);
-printf(" & Email: \\verb'%s' & %s \\\\\n", email1, cellphone1)
+printf(" & Email: \\verb'%s' &", email1)
+if (length(cellphone1)) {
+	printf("%s%s", cellphone1, cell_suffix)
+}
+printf("\\\\\n")
 if (length(hometown1)) {
 	printf(" & Hometown: %s, %s \\\\\n ", hometown1, homestate1);
 } else {
@@ -82,7 +88,11 @@ if (length(hometown1)) {
 #print("\\midrule");
 #printf("%s ", firstname2);
 printf("\\multirow{2}{*}{%s}", firstname2);
-printf(" & Email: \\verb'%s' & %s \\\\\n", email2, cellphone2)
+printf(" & Email: \\verb'%s' &", email2)
+if (length(cellphone2)) {
+	printf("%s%s", cellphone2, cell_suffix)
+}
+printf("\\\\\n")
 if (length(hometown2)) {
 	printf(" & Hometown: %s, %s \\\\\n ", hometown2, homestate2);
 } else {
